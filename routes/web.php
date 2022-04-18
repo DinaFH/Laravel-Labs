@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('welcome'); // load view 
 });
+
+
+Route::get('/posts', [PostController::class,'index']);
+//array have two items controller class name and name of action  instead of closure function
+//function () { } 
+// :: => scope resolution => +namespaces
+    
+Route::get('/posts/create', [PostController::class,'create']);
