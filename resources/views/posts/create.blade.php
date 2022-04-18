@@ -1,1 +1,25 @@
- create post form is here
+
+
+
+
+ <form method="POST" action="/posts">
+            @csrf
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Title</label>
+                <input name="title" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Description</label>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            </div>
+
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Post Creator</label>
+                <select class="form-control">
+                    <option value="1">Ahmed</option>
+                    <option value="2">Mohamed</option>
+                </select>
+            </div>
+
+          <button class="btn btn-success">Create</button>
+        </form>
