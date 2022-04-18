@@ -25,3 +25,4 @@ Route::get('/posts', [PostController::class,'index']);
 // :: => scope resolution => +namespaces
     
 Route::get('/posts/create', [PostController::class,'create']);
+Route::get('/posts',[PostController::class,'store']);
