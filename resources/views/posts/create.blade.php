@@ -2,7 +2,7 @@
 @section('title')Create @endsection
 
 @section('content')
-<form method="POST" action="/posts">
+<form method="POST" action="{{ route('posts.store')}}">
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Title</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
