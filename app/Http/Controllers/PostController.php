@@ -26,7 +26,12 @@ class PostController extends Controller
     public function store(){
         return 'we are in store';
     }
-    
+    public function show($postId){
+       return $postId;
+    }
+    /*public function show($postId,$tagId){
+      dd($postID,$tagId);
+    }*/
 
 }
 
