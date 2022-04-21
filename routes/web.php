@@ -30,3 +30,5 @@ Route::post ('/posts',[PostController::class,'store'])->name('posts.store');
 Route::get('/posts/{post}',[PostController::class,'show'])->name('posts.show'); //dynamic parameter
 //Route::get('/posts/{post}/{tag}',[PostController::class,'show']); //dynamic parameter
 //Always put routes with dynamic parameters at the end in order to avoid confusion.
+Route::get('/posts/{post}/edit',[PostController::class, 'edit'])->name('posts.edit');
+Route::post('/posts/{post}',[PostController::class, 'update'])->name('posts.update');
