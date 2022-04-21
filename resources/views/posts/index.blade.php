@@ -1,9 +1,11 @@
 @extends('layouts.app')
 @section('title')Index @endsection
 @section('content')
-        <div class="text-center">
-        <a href="{{ route('posts.create') }}" class="mt-4 btn btn-success">Create Post</a>
-        </div>
+     
+        <div class="mb-5 d-flex justify-content-center">
+        <x-link-button type="success" to="{{route('posts.create')}}"  text="Create Post" />
+    </div>
+        
         <table class="table mt-4">
             <thead>
               <tr>
@@ -22,10 +24,10 @@
                 <td>{{ $post['post_creator'] }}</td>
                 <td>{{ $post['created_at'] }}</td>
                 <td>
-            
-                <a href="{{ route('posts.show', ['post' => $post['id']]) }}" class="btn btn-info">View</a>
-                <a href="{{ route('posts.edit', ['post' => $post['id']]) }}" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
+           
+               <x-link-button to="{{route('posts.show', ['post'=>$post])}}"  text="" type="primary" />
+                <x-link-button to="{{route('posts.edit', ['post'=>$post])}}" text="" type="success" />
+                <x-link-button to="#" text="" type="danger" />
                 </td>
               </tr>
               @endforeach

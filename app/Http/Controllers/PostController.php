@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //action methods 
+    
     public function index(){
 
         $posts = [
@@ -14,7 +14,7 @@ class PostController extends Controller
             ['id' => 2, 'title' => 'PHP', 'post_creator' => 'Mohamed', 'created_at' => '2022-04-16 10:37:00'],
             ['id' => 3, 'title' => 'Javascript', 'post_creator' => 'Ali', 'created_at' => '2022-04-16 10:37:00'],
         ];
-         // dd($posts); for debugging //diedump global helper method
+        
         return view('posts.index',[
            
             'posts' => $posts,
@@ -50,10 +50,7 @@ class PostController extends Controller
     {
         return 'Your data has been updated successfully';
     }
-    /*public function show($postId,$tagId){
-      dd($postID,$tagId);
-    }*/
-
+    
 }
 
 ?>
