@@ -35,10 +35,16 @@
            
                <x-link-button to="{{route('posts.show', ['post'=>$post])}}"  text="" type="primary" />
                 <x-link-button to="{{route('posts.edit', ['post'=>$post])}}" text="" type="success" />
-                <x-link-button to="#" text="" type="danger" />
+                <form style="display: inline" method="POST" action="{{ route('posts.destroy', ['post' => $post->id]) }}">
+                    @method('DELETE')
+                    @csrf
+                    <x-link-button type="danger"/>Delete</button>
+                    </form>
+                
                 </td>
               </tr> 
               @endforeach
             </tbody>
           </table>
+          <div class="d-flex justify-content-center"> {{ $posts->links() }}</div>
           @endsection
