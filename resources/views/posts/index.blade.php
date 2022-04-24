@@ -18,18 +18,20 @@
             </thead>
             <tbody>
             @foreach ($posts as $post)   
+            
               <tr>
-                <td>{{ $post['id'] }}</th>
-                <td>{{ $post['title'] }}</td>
-                <td>{{ $post['post_creator'] }}</td>
-                <td>{{ $post['created_at'] }}</td>
+                <!-- laravel implements magic methods to access object as an array-->
+                <td>{{ $post->id }}</th>
+                <td>{{ $post->title }}</td>
+                <td>{{ $post->post_creator }}</td>
+                <td>{{ $post->created_at }}</td>
                 <td>
            
                <x-link-button to="{{route('posts.show', ['post'=>$post])}}"  text="" type="primary" />
                 <x-link-button to="{{route('posts.edit', ['post'=>$post])}}" text="" type="success" />
                 <x-link-button to="#" text="" type="danger" />
                 </td>
-              </tr>
+              </tr> 
               @endforeach
             </tbody>
           </table>
