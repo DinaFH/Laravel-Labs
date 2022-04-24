@@ -21,16 +21,13 @@
             
               <tr>
                 <!-- laravel implements magic methods to access object as an array-->
+               
+           
+                <td>{{ $post->created_at }}</td>
                 <td>{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
-                <td>{{ $post->post_creator }}</td>
-                @if($post->user)
-                  <td>{{$post->user->name}}</td>
-                @else
-                  <td>Not Found</td>
-                @endif
-                {{-- <td>{{$post->user ? $post->user->name : 'Not Found'}}</td> --}}
-                <td>{{ $post->created_at }}</td>
+                <td>{{ $post->user ? $post->user->name : "Not Found" }}</td>
+                <td>{{ \Carbon\Carbon::parse( $post->created_at )->toDateString(); }}</td>
                 <td>
            
                <x-link-button to="{{route('posts.show', ['post'=>$post])}}"  text="" type="primary" />

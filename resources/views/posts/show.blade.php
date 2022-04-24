@@ -30,6 +30,7 @@
     <p class="card-text"><b>Name:</b> {{ $user['name'] }}</p>
     <p class="card-text"><b>Email:</b> {{ $user['email'] }}</p>
     <p class="card-text"><b>Created at:</b>{{ $post['created_at'] }}</p>
+    <p class="card-text">Created At: {{ \Carbon\Carbon::parse($post['created_at'])->format('l jS \\of F Y h:i:s A'); }}</p>
   </div>
   <form>
     <div class="mb-3">
