@@ -9,12 +9,11 @@
             {{ method_field('put') }} 
             <div class="mb-3">
                 <label for="exampleFormControlInput1" class="form-label">Title</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
                 <input name="title" value="{{ $post['title'] }}" type="text" class="form-control" id="exampleFormControlInput1" placeholder="">
             </div>
             <div class="mb-3">
                 <label for="exampleFormControlTextarea1" class="form-label">Description</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3">{{ $post['description'] }}</textarea>
             </div>
 
             <div class="mb-3">

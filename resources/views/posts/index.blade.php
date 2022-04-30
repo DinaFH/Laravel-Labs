@@ -23,25 +23,27 @@
                 <!-- laravel implements magic methods to access object as an array-->
                
            
-                <td>{{ $post->created_at }}</td>
+              
                 <td>{{ $post->id }}</th>
                 <td>{{ $post->title }}</td>
-                <td>{{ $post->user ? $post->user->name : "Not Found" }}</td>
-                <td>{{ \Carbon\Carbon::parse( $post->created_at )->toDateString(); }}</td>
+               <!-- <td>{{ $post->post_creator }}</td>-->
+                @if($post->user)
+                  <td>{{$post->user->name}}</td>
+                @else
+                  <td>Not Found</td>
+                @endif
+                {{-- <td>{{$post->user ? $post->user->name : 'Not Found'}}</td> --}}
+                <td>{{ $post->created_at }}</td>
                 <td>
            
                <x-link-button to="{{route('posts.show', ['post'=>$post])}}"  text="" type="primary" />
                 <x-link-button to="{{route('posts.edit', ['post'=>$post])}}" text="" type="success" />
-                <form style="display: inline" method="POST" action="{{ route('posts.destroy', ['post' => $post->id]) }}">
-                    @method('DELETE')
-                    @csrf
-                    <x-link-button type="danger"/>Delete</button>
-                    </form>
+                <x-link-button to="#" text="" type="danger" />
                 
                 </td>
               </tr> 
               @endforeach
             </tbody>
           </table>
-          <div class="d-flex justify-content-center"> {{ $posts->links() }}</div>
+          
           @endsection
